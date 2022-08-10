@@ -1,3 +1,11 @@
+<?php
+include_once 'includes/dbh.php';
+
+
+$username = "arsalan";
+$password = "hello123";
+?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
