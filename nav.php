@@ -1,5 +1,6 @@
 <?php
 include_once 'includes/functions.php';
+include_once 'nav.php';
 ?>
 <link rel="stylesheet" href="<?php echo 'styles.css'; ?>">
 
