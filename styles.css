@@ -5,3 +5,9 @@ body{
 nav li {
 display: inline; font-family: Arial, Helvetica, sans-serif;
 }
+#hello{
+    color: rgb(58, 8, 150); font-size: larger;
+}
+.name{
+    color: rgb(0, 255, 110);
+}
