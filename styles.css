@@ -1,0 +1,7 @@
+body{
+    background-color: rgb(164, 88, 34);
+}
+
+nav li {
+display: inline; 
+}
