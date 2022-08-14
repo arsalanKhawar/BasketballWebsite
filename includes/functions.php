@@ -29,12 +29,26 @@ function emptyInputSignup($name, $email, $username, $pswd, $confirmpswd){
 
 //will check email conditions
 function invalidEmail($username){
-
+    $result = true;
+    if(!preg_match("/^[a-z0-9_-]{3,30}$/i", $username)){
+        $result = true;
+    }
+    else{
+        $result = false;
+    }
+    return $result;
 }
 
 //will check username conditions
 function invalidUsername($email){
-
+    $result = true;
+    if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+        $result = true;
+    }
+    else{
+        $result = false;
+    }
+    return $result;
 }
 
 //checks if password and confirm password match
