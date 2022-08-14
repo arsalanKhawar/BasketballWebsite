@@ -53,7 +53,14 @@ function invalidUsername($email){
 
 //checks if password and confirm password match
 function pswdMatch($pswd,$confirmpswd){
-
+    $result = true;
+    if($pswd !== $confirmpswd){
+        $result = true;
+    }
+    else{
+        $result = false;
+    }
+    return $result;
 }
 
 //checks if the username is already in database
