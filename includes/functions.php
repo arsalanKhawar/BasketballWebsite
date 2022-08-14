@@ -12,4 +12,29 @@ function is_logged_in($redirect = false, $destination = "login.php")
     }
     return $isLoggedIn; //se($_SESSION, "user", false, false);
 }
+
+function emptyInputSignup(){
+
+}
+
+function invalidEmail(){
+
+}
+
+function invalidUsername(){
+
+}
+
+function pswdMatch(){
+
+}
+
+function usernameExists(){
+
+}
+
+function createUser(){
+    
+}
+
 ?>

@@ -8,9 +8,9 @@ include_once 'nav.php';
 <link rel="stylesheet" href="<?php echo 'styles.css'; ?>">
 
 <!--Creating registration form-->
-<section class="signup">
+<section class="login">
     <h2 id="signuplabel">Login</h2>
-        <div class="signup-form">
+        <div class="login-form">
         <form action="includes/login.inc.php" method="POST">
             <input type="text" name ="email" placeholder="Email/Username">
             <input type="text" name ="username" placeholder="Username">

@@ -11,7 +11,7 @@ include_once 'nav.php';
     <ul>
         <?php if(!is_logged_in()) : ?>
             <li><a href = "<?php echo 'login.php' ?>">Login</a></li>
-            <li><a href = "<?php echo 'signup.php' ?>">Register</a></li>
+            <li><a href = "<?php echo 'signup.php' ?>">Sign up</a></li>
             <li><a href = "<?php echo 'about.php' ?>">About</a></li>
             <?php endif;?>
     </ul>
