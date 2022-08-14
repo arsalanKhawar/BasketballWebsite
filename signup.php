@@ -9,7 +9,7 @@ include_once 'nav.php';
 <section class="signup">
     <h2 id="signuplabel">Sign up</h2>
         <div class="signup-form">
-        <form action="signup.php" method="POST">
+        <form action="includes/signup.inc.php" method="POST">
             <input type="text" name ="name" placeholder="Name">
             <input type="text" name ="email" placeholder="Email">
             <input type="text" name ="username" placeholder="Username">

@@ -16,11 +16,12 @@ include_once 'includes/dbh.php';
 
     
     <?php
-        /*
+    /*
+        
         //how to insert data into a table
         $sql = "INSERT INTO users (email,password) VALUES ('$email','$password');";
         $result = mysqli_query($conn, $sql);
-        */
+        
         //how to insert data into a table method 2
         $myemail = "new@gmail.com";
         $password = "pswd";
@@ -33,7 +34,7 @@ include_once 'includes/dbh.php';
             mysqli_stmt_bind_param($stmt,"ss", $myemail, $password);
             mysqli_stmt_execute($stmt);
         }
-/*
+
         //how to get data from table, method 1
         $sql = "SELECT * FROM users ;";
         $result = mysqli_query($conn, $sql);
@@ -46,7 +47,7 @@ include_once 'includes/dbh.php';
         else{
             echo "failed to get from database";
         }
-*/
+
         //how to get data from table, method 2
         $myemail = "ars@gmail.com";
         $sql = "SELECT * FROM users WHERE email =? ;";
@@ -62,7 +63,7 @@ include_once 'includes/dbh.php';
                 echo $row['email'] . "<br>";
             }
         }
-            
+            */
     ?>
 </body>
 </html>

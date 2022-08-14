@@ -4,3 +4,18 @@
 include_once 'includes/functions.php';
 include_once 'nav.php';
 ?>
+
+<link rel="stylesheet" href="<?php echo 'styles.css'; ?>">
+
+<!--Creating registration form-->
+<section class="signup">
+    <h2 id="signuplabel">Login</h2>
+        <div class="signup-form">
+        <form action="includes/login.inc.php" method="POST">
+            <input type="text" name ="email" placeholder="Email/Username">
+            <input type="text" name ="username" placeholder="Username">
+            <input type="password" name ="pswd" placeholder="Password">
+            <button type="submit" name ="submit">Log in</button>
+        </form>
+        </div>
+</section>
