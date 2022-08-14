@@ -3,6 +3,7 @@
 <?php
 include_once 'includes/dbh.php';
 
+//checks if user is logged in
 function is_logged_in($redirect = false, $destination = "login.php")
 {
     $isLoggedIn = isset($_SESSION["user"]);
@@ -13,28 +14,42 @@ function is_logged_in($redirect = false, $destination = "login.php")
     return $isLoggedIn; //se($_SESSION, "user", false, false);
 }
 
-function emptyInputSignup(){
+//will check if signup form has empty fields
+function emptyInputSignup($name, $email, $username, $pswd, $confirmpswd){
+    $result = true;
+    if(empty($name) || empty($email) || empty($username) || empty($pswd) || empty($confirmpswd) ){
+        $result = true;
+    }
+    else{
+        $result = false;
+    }
+    return $result;
 
 }
 
-function invalidEmail(){
+//will check email conditions
+function invalidEmail($username){
 
 }
 
-function invalidUsername(){
+//will check username conditions
+function invalidUsername($email){
 
 }
 
-function pswdMatch(){
+//checks if password and confirm password match
+function pswdMatch($pswd,$confirmpswd){
 
 }
 
-function usernameExists(){
+//checks if the username is already in database
+function usernameExists($conn, $username){
 
 }
 
-function createUser(){
-    
+
+function createUser($conn,$name,$email,$username,$pswd){
+
 }
 
 ?>
