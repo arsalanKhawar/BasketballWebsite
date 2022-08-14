@@ -1,3 +1,5 @@
+<!--Home page the user will be directed to when logged in-->
+
 <?php
 include_once 'includes/functions.php';
 include_once 'nav.php';
