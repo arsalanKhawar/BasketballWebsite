@@ -30,7 +30,7 @@ if(isset($_POST["submit"])){
         header("location: ../signup.php?error=unmatchingpswd");
         exit();
     }
-    if(usernameExists($conn, $username) !== false){
+    if(usernameExists($conn, $username, $email) !== false){
         header("location: ../signup.php?error=usernameExists");
         exit();
     }
