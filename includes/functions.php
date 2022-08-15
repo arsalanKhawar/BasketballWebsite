@@ -100,7 +100,7 @@ function createUser($conn,$name,$email,$username,$pswd){
     mysqli_stmt_close($stmt);
     header("location: ../login.php?error=none");
 }
-
+//checks if login fields are complete.
 function emptyInputLogin($username, $pswd){
     $result = true;
     if(empty($username) || empty($pswd) ){
@@ -110,6 +110,28 @@ function emptyInputLogin($username, $pswd){
         $result = false;
     }
     return $result;
+}
+function loginUser($conn, $username, $pswd){
+    $uidExists = usernameExists($conn, $username, $username);
+    if($uidExists === false){
+        header("location: ../login.php?error=usernameDoesntExist");
+        exit();
+    }
+    $pswdHash = $uidExists["password"];
+    $pswdCheck = password_verify($pswd,$pswdHash);
+
+    if($pswdCheck === false){
+        header("location: ../login.php?error=wrongLogin");
+        exit();
+    }
+    else if($pswdCheck === true){
+        session_start();
+        $_SESSION["id"] = $uidExists["id"];
+        $_SESSION["username"] = $uidExists["username"];
+        header("location: ../home.php");
+        exit();
+    }
+
 }
 
 ?>
