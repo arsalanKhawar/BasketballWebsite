@@ -6,11 +6,11 @@ if(isset($_POST["submit"])){
     require_once "functions.php";
 
     if(emptyInputLogin($username, $pswd) !== false){
-        header("location: ../signup.php?error=emptyinput");
+        header("location: ../login.php?error=emptyinput");
         exit();
     }
 
-    loginUser($conn,$username,$pwd);
+    loginUser($conn,$username,$pswd);
 }
 
 

@@ -1,6 +1,7 @@
 <!--This page is for the navigation bar on top of every page in the website-->
 
 <?php
+session_start();
 include_once 'includes/functions.php';
 include_once 'nav.php';
 ?>
@@ -9,11 +10,21 @@ include_once 'nav.php';
 <!--Nav bar for users who are NOT logged in-->
 <nav>
     <ul>
-        <?php if(!is_logged_in()) : ?>
-            <li><a href = "<?php echo 'login.php' ?>">Login</a></li>
-            <li><a href = "<?php echo 'signup.php' ?>">Sign up</a></li>
-            <li><a href = "<?php echo 'about.php' ?>">About</a></li>
-            <?php endif;?>
+            
+            <?php
+            if(isset($_SESSION["username"])){
+                echo "<li><a href =  'home.php' >Home</a></li>";
+                echo "<li><a href =  'about.php' >About</a></li>";
+                echo "<li><a href = 'includes/logout.inc.php' >Logout</a></li>";
+            }
+            else{
+            echo "<li><a href = 'login.php'>Login</a></li>";
+            echo " <li><a href = 'signup.php' >Sign up</a></li>";
+            echo "<li><a href = 'about.php' >About</a></li>";
+            }
+            ?>
+        
+        
     </ul>
 </nav>
 

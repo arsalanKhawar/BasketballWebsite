@@ -3,6 +3,11 @@
 <?php
 include_once 'includes/functions.php';
 include_once 'nav.php';
+
+if(!isset($_SESSION["username"])){
+    header("location: login.php?error=notLoggedIn");
+    exit();
+}
 ?>
 <link rel="stylesheet" href="<?php echo 'styles.css'; ?>">
 

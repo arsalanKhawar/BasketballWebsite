@@ -3,16 +3,7 @@
 <?php
 include_once 'includes/dbh.php';
 
-//checks if user is logged in
-function is_logged_in($redirect = false, $destination = "login.php")
-{
-    $isLoggedIn = isset($_SESSION["user"]);
-    if ($redirect && !$isLoggedIn) {
-        echo "You must be logged in to view this page";
-        die(header("Location: $destination"));
-    }
-    return $isLoggedIn; //se($_SESSION, "user", false, false);
-}
+
 
 //will check if signup form has empty fields
 function emptyInputSignup($name, $email, $username, $pswd, $confirmpswd){
@@ -111,10 +102,11 @@ function emptyInputLogin($username, $pswd){
     }
     return $result;
 }
+
 function loginUser($conn, $username, $pswd){
     $uidExists = usernameExists($conn, $username, $username);
     if($uidExists === false){
-        header("location: ../login.php?error=usernameDoesntExist");
+        header("location: ../login.php?error=wrongLogin");
         exit();
     }
     $pswdHash = $uidExists["password"];
