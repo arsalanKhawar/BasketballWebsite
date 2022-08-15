@@ -85,7 +85,7 @@ function usernameExists($conn, $username, $email){
     mysqli_stmt_close($stmt);
 }
 
-
+//Adds user information into users database
 function createUser($conn,$name,$email,$username,$pswd){
     $sql = "INSERT INTO users (name,email,username,password) VALUES (?,?,?,?);";
     $stmt = mysqli_stmt_init($conn);
@@ -99,6 +99,17 @@ function createUser($conn,$name,$email,$username,$pswd){
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
     header("location: ../login.php?error=none");
+}
+
+function emptyInputLogin($username, $pswd){
+    $result = true;
+    if(empty($username) || empty($pswd) ){
+        $result = true;
+    }
+    else{
+        $result = false;
+    }
+    return $result;
 }
 
 ?>

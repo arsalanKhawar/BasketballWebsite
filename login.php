@@ -13,7 +13,6 @@ include_once 'nav.php';
         <div class="login-form">
         <form action="includes/login.inc.php" method="POST">
             <input type="text" name ="email" placeholder="Email/Username">
-            <input type="text" name ="username" placeholder="Username">
             <input type="password" name ="pswd" placeholder="Password">
             <button type="submit" name ="submit">Log in</button>
         </form>

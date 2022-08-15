@@ -2,6 +2,7 @@
 
 <?php
 include_once 'nav.php';
+include_once 'includes/functions.php';
 ?>
 <link rel="stylesheet" href="<?php echo 'styles.css'; ?>">
 
@@ -18,4 +19,31 @@ include_once 'nav.php';
             <button type="submit" name ="submit">Signup</button>
         </form>
         </div>
+        <?php
+if(isset($_GET["error"])){
+    if($_GET["error"] == "emptyinput"){
+        echo "Fill all fields";
+    }
+    if($_GET["error"] == "invalidusername"){
+        echo "invalid username";
+    }
+    if($_GET["error"] == "invalidemail"){
+        echo "invalid email";
+    }
+    if($_GET["error"] == "unmatchingpswd"){
+        echo "Passwords do not match!";
+    }
+    if($_GET["error"] == "usernameExists"){
+        echo "This username is already taken!";
+    }
+    if($_GET["error"] == "stmtfailed"){
+        echo "Fill all fields";
+    }
+    if($_GET["error"] == "none"){
+        echo "Success!";
+    }
+}
+?>
 </section>
+
+
