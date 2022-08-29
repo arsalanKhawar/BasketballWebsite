@@ -12,6 +12,6 @@ if(isset($_POST["submit"])){
         header("location: ../addteam.php?error=teamnameExists");
         exit();
     }
-    addteam($teamname);
+    addteam($conn, $teamname);
 }
 ?>
