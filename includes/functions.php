@@ -143,7 +143,7 @@ function teamnameExists($conn, $teamname){
         header("location: ../addteam.php?error=stmtfailed");
         exit();
     }
-    mysqli_stmt_bind_param($stmt, "s",$username);
+    mysqli_stmt_bind_param($stmt, "s",$teamname);
     mysqli_stmt_execute($stmt);
 
     $resultData = mysqli_stmt_get_result($stmt);
