@@ -16,6 +16,8 @@ include_once 'nav.php';
                 echo "<li><a href =  'home.php' >Home</a></li>";
                 echo "<li><a href =  'about.php' >About</a></li>";
                 echo "<li><a href = 'includes/logout.inc.php' >Logout</a></li>";
+                echo "<li><a href = 'addteam.php' >Add Team</a></li>";
+
             }
             else{
             echo "<li><a href = 'login.php'>Login</a></li>";
