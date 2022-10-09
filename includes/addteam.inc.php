@@ -1,3 +1,5 @@
+<!--Recieves user data from addteam.php and performs various checks on the data via functions.php, and then adds the team via functions.php-->
+
 <?php
 if(isset($_POST["submit"])){
     $teamname = $_POST["teamname"];
