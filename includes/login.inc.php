@@ -1,3 +1,4 @@
+<!--Recieves user data from login.php and performs various checks on the data via functions.php, and then logs in the user via functions.php-->
 <?php
 if(isset($_POST["submit"])){
     $username = $_POST["username"];

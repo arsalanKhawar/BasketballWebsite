@@ -103,6 +103,7 @@ function emptyInputLogin($username, $pswd){
     return $result;
 }
 
+//checks if the teamname field is empty when the user adds a new team
 function emptyteamname($teamname){
     $result = true;
     if(empty($teamname)){
@@ -114,6 +115,7 @@ function emptyteamname($teamname){
     return $result;
 }
 
+//logs in user if login is valid, otherwise tells user about invalid login info
 function loginUser($conn, $username, $pswd){
     $uidExists = usernameExists($conn, $username, $username);
     if($uidExists === false){
@@ -136,6 +138,8 @@ function loginUser($conn, $username, $pswd){
     }
 
 }
+
+//checks if a user already has a team with a certain name
 function teamnameExists($conn, $teamname){
     session_start();
     $userid = $_SESSION["id"];
@@ -159,6 +163,7 @@ function teamnameExists($conn, $teamname){
     mysqli_stmt_close($stmt);
 }
 
+//adds team to database
 function addteam($conn, $teamname){
     $userid = $_SESSION["id"];
     
