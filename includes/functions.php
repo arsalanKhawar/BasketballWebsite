@@ -137,13 +137,15 @@ function loginUser($conn, $username, $pswd){
 
 }
 function teamnameExists($conn, $teamname){
-    $sql = "SELECT * FROM teams WHERE teamName = ?;";
+    session_start();
+    $userid = $_SESSION["id"];
+    $sql = "SELECT * FROM teams WHERE teamName = ? AND uid = ?;";
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt,$sql)){
         header("location: ../addteam.php?error=stmtfailed");
         exit();
     }
-    mysqli_stmt_bind_param($stmt, "s",$teamname);
+    mysqli_stmt_bind_param($stmt, "ss",$teamname,$userid);
     mysqli_stmt_execute($stmt);
 
     $resultData = mysqli_stmt_get_result($stmt);
@@ -158,7 +160,6 @@ function teamnameExists($conn, $teamname){
 }
 
 function addteam($conn, $teamname){
-    session_start();
     $userid = $_SESSION["id"];
     
     
