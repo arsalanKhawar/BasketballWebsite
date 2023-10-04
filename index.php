@@ -7,10 +7,17 @@
     <title>My Website</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <meta http-equiv='refresh' content='0; URL=http://example.com/'>
   </head>
   <body>
     <main>
         <h1>Welcome to My Website</h1>  
+        <head>
     </main>
   </body>
 </html>
+<?php
+header("location: ../login.php");
+?>
+
+
